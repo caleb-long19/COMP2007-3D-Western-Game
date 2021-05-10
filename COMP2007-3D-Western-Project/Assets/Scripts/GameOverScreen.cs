@@ -6,25 +6,24 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-   // public GameObject DeathScreen; // Attatch GameObject called DeathScreen in unity
-    public TextMeshProUGUI scoreText; // Get Text Mesh Component to store Score Text from the UI
+    public GameObject DeathScreen; // Attatch GameObject called DeathScreen in unity
+    public PlayerHealth playerHealth;
 
     private void Start()
     {
-     //   DeathScreen.SetActive(false); // When Game Begins, Death Screen UI is disabled
+        DeathScreen.SetActive(false); // When Game Begins, Death Screen UI is disabled
     }
 
     private void Update()
     {
-       // if (HealthSystem.health <= 0)
+        if (playerHealth.CurrentPlayerHealth <= 0)
         {
-           // DeathScreen.SetActive(true); // When player health is equal to 0, DeathScreen is active
-        //    scoreText.text = "SCORE: " + Coin.score.ToString(); // Score Counter Text is equal to Integer Score
+            DeathScreen.SetActive(true); // When player health is equal to 0, DeathScreen is active
         }
 
-       // if (HealthSystem.health >= 1)
+        if (playerHealth.CurrentPlayerHealth >= 1)
         {
-         //   DeathScreen.SetActive(false); // When player health is equal to >= 1, DeathScreen is not active
+            DeathScreen.SetActive(false); // When player health is equal to >= 1, DeathScreen is not active
         }
 
     }
