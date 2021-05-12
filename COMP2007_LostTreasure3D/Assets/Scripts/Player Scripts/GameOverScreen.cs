@@ -19,6 +19,7 @@ public class GameOverScreen : MonoBehaviour
         if (playerHealth.CurrentPlayerHealth <= 0)
         {
             DeathScreen.SetActive(true); // When player health is equal to 0, DeathScreen is active
+            Destroy(GameObject.FindWithTag("Player"));
         }
 
         if (playerHealth.CurrentPlayerHealth >= 1)

@@ -17,27 +17,14 @@ public class PlayerDamaged : AnimatorController
         playerHealth.CurrentPlayerHealth = playerHealth.MaximumHealth;
     }
 
-    void Update()
-    {
-        //If the player press the down arrow key, Damage the player & run the following methods
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            //Run the Damage Player method and damage the player by 10 points
-            DamagePlayer(10);
-            HealthbarAnimations();
-            SoundEffectHurt();
-
-        }
-        //If the player press the Up arrow key, Heal the player & run the following methods
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            //Run the Heal Player method and heal the player by 10 points
-            HealPlayer(10);
-            HealthbarAnimations();
-            SoundEffectHeal();
-        }
-    }
     #endregion
+
+    public void TakeEnemyDamage(int damage) // (Linked to HurtTrigger Script)
+    {
+        playerHealth.CurrentPlayerHealth -= damage; // If Shield is less than or equal to 1, Player can lose Health
+        HealthbarAnimations();
+        SoundEffectHurt();
+    }
 
 
     #region Damage and Heal Player Methods
@@ -52,33 +39,13 @@ public class PlayerDamaged : AnimatorController
             playerHealth.CurrentPlayerHealth = 0;
         }
     }
-
-    void HealPlayer(int healPlayer)
-    {
-        //Take the current player health and increase by set int value
-        playerHealth.CurrentPlayerHealth += healPlayer;
-
-        //if the health is above 100 - reset to 100
-        if (playerHealth.CurrentPlayerHealth >= 100)
-        {
-            playerHealth.CurrentPlayerHealth = 100;
-        }
-    }
     #endregion
-
-
 
     #region Virtual Methods
     public override void SoundEffectHurt()
     {
         //Access the virtual method from the AnimatorController method and run the hurt SFX
         base.SoundEffectHurt();
-    }
-
-    public override void SoundEffectHeal()
-    {
-        //Access the virtual method from the AnimatorController method and run the heal SFX
-        base.SoundEffectHeal();
     }
 
     public override void HealthbarAnimations()
