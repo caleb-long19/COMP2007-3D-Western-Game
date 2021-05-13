@@ -6,7 +6,9 @@ public class AnimatorController : MonoBehaviour
 {
 
     //Creating reference to UI Animation Scripts
-    public FlashAnimation healthbarAnimations;
+    public FlashAnimation healthbarAnimationFlash;
+    public SquashAnimation healthbarAnimationSquash;
+    public RumbleAnimation healthbarAnimationRumble;
 
     //Create public audio source to assign SFX
     public AudioSource hurtSFX;
@@ -20,6 +22,8 @@ public class AnimatorController : MonoBehaviour
     //Create a virtual method to play the Healthbar Animations
     public virtual void HealthbarAnimations()
     {
-        healthbarAnimations.UiAnimation();
+        healthbarAnimationFlash.UiAnimation();
+        healthbarAnimationSquash.UiAnimation();
+        healthbarAnimationRumble.UiAnimation();
     }
 }

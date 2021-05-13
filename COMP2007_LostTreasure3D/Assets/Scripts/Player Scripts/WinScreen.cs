@@ -20,10 +20,10 @@ public class WinScreen : MonoBehaviour
         // If Player presses Space on the House and has acquired the treasure, run if statement
         if (Input.GetKey("e") & collision.tag.Equals("Player"))
         {
+            winSFX.Play(0);
             Win.SetActive(true); // When Player collides with Main House and has the treasure, Win Screen is Active
             Player.SetActive(false); // Player is set to Inactive      
             Time.timeScale = 0; // Game is paused
-            winSFX.Play(0);
         }
     }
 

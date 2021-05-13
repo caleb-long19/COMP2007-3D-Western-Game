@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
     public static int money = 0; // Integer for Players Score
 
     //Unity References
-    public AudioSource CoinPickup; // Audio Clip for Coins
+    public AudioClip CoinPickup; // Audio Clip for Coins
 
     private void Start()
     {
@@ -20,9 +20,9 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player")) //If "Player" collides with coin add 1 point and destroy object
         {
-            CoinPickup.Play(0); // Play audio in Coins position
+            AudioSource.PlayClipAtPoint(CoinPickup, this.gameObject.transform.position); // Play audio in Coins position
             money++; // Every coin pickup equals to 1 point
-            Destroy(gameObject, 0.1f); // Destroy Coin gameObject when Player collides
+            Destroy(gameObject); // Destroy Coin gameObject when Player collides
 
             Debug.Log("Player Has Collided!"); // Display Debug Log in Console
         }
