@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     //Access the slider component
     public Slider healthSlider;
 
+    //Int variables for Player health values
     private int currentPlayerHealth;
     private int maximumHealth;
 
@@ -39,9 +40,9 @@ public class PlayerHealth : MonoBehaviour
     }
     #endregion
 
-    //Allow the program to constantly update the Players Healthbar (Slider) to the current players health
     void Update()
     {
+        //Allow the program to constantly update the Players Healthbar (Slider) to the current players health
         healthSlider.maxValue = maximumHealth;
         healthSlider.value = currentPlayerHealth;
     }

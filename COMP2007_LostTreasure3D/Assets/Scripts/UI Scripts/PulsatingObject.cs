@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PulsatingObject : MonoBehaviour
+public class PulsatingObject : MonoBehaviour, AnimationInterface
 {
     private bool allowPulse;
 
@@ -13,16 +13,31 @@ public class PulsatingObject : MonoBehaviour
         allowPulse = true;
     }
 
+
     private void OnMouseOver()
     {
+        //When User hovers over button, run pulsing animation
         if (allowPulse)
         {
-            StartCoroutine("PulseObject");
+            UiAnimation();
+        }
+        else
+        {
+            StopCoroutine("UiAnimationProcess");
         }
     }
 
-    private IEnumerator PulseObject()
+    #region Animation Method and IEnumerator to create Rumble effect for Healthbar
+    public void UiAnimation()
     {
+        StartCoroutine("UiAnimationProcess");
+    }
+    #endregion
+
+
+    public IEnumerator UiAnimationProcess()
+    {
+        //Run a for loop to begin pulse animation on button object by increasing/decreasing the scale
         allowPulse = false;
 
         for (float i = 0f; i <= 1f; i += 0.1f)

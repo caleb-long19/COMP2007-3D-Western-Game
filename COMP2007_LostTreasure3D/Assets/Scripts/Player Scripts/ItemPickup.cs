@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-
     //Unity References
     public AudioSource ItemPickupSFX; // Audio Clip for Items
 
@@ -12,8 +11,8 @@ public class ItemPickup : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Pickup") && Input.GetKey("e")) //If "Player" collides with Item, setactive to false 
         {
-            ItemPickupSFX.Play(0); // Play audio in Items position
-            GameObject HideObject = collision.gameObject;
+            ItemPickupSFX.Play(0); // Play item pickup SFX
+            GameObject HideObject = collision.gameObject; // hide game object
             HideObject.SetActive(false);
 
             Debug.Log("Player Has Collected Item!"); // Display Debug Log in Console

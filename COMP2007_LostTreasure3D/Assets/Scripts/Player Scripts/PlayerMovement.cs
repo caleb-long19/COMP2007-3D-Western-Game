@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    //Reference Camera and CharacterController script
     public CharacterController controller;
     public Transform camera;
 
+
+    //Floar Variables
     public float speed = 6f;
     public float turningSmoothTime = 0.1f;
-    float turnSmoothV;
+    private float turnSmoothV;
+
+
+    //Particle System References
     public ParticleSystem movementParticles;
 
+
+    //Audio References
     public AudioSource Running;
 
-    Animator animator;
+
+    //Animator References
+    private Animator animator;
+
 
     void Start()
     {
+        //Get animator component on gameobject
         animator = GetComponent<Animator>();
     }
 
@@ -26,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Store Horizontal and Verticle values in float variables
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -38,15 +52,17 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 
+            //Play Movement Particles and start running animation
             MovementParticles();
             animator.SetBool("isRunning", true);
 
-
+            //Move Player based on direction, speed and time
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
         else
         {
+            //Stop particles and running animation
             StopHealingParticles();
             animator.SetBool("isRunning", false);
         }
@@ -58,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         //If the particles are not playing, play the particle animation
         if (!movementParticles.isPlaying)
         {
-            //Wait 1 second and run the Stop healing particles 
+            //Play particles and running sfx
             movementParticles.Play();
             Running.Play();
         }
@@ -66,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopHealingParticles()
     {
+        //Stop particles and running sfx
         movementParticles.Stop();
         Running.Stop();
     }

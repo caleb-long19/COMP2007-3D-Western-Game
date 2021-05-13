@@ -9,9 +9,9 @@ public class OnDamagedEvent : UnityEvent<int> { }
 
 public class PlayerDamaged : AnimatorController
 {
-
     //Reference the PlayerHealthBar script
     public PlayerHealth playerHealth;
+
 
     #region Start and Update Methods
     void Start()

@@ -16,10 +16,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private float MaxEnemyRange = 0; // Maximum range the Enemy can spot player
 
+
+
     //Unity References
     private Animator EnemyMovement; // Reference to Unity Animator
     private Transform Target; // Reference to Player position
-    public AudioSource EnemySFX;
+    public AudioSource EnemySFX; // Create an AudioSource Accessor for the Attack SFX
 
 
     public void Start()
@@ -37,10 +39,11 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            EnemyMovement.SetBool("enemyIsMoving", false);
+            EnemyMovement.SetBool("enemyIsMoving", false); //Activate the moving animation for the Enemy
         }
 
     }
+
 
     public void TrackPlayer()
     {
@@ -51,13 +54,17 @@ public class EnemyAI : MonoBehaviour
         FaceTarget();
     }
 
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.Equals("Player")) //If Enemy collides with Player character
         {
+            //Play SFX and Activate Enemies Attack Animation
             EnemySFX.Play(0);
             EnemyMovement.SetBool("enemyIsMoving", false);
             EnemyMovement.SetBool("enemyIsAttacking", true);
+
+
             Debug.Log("Player Has Collided!"); // Display Debug Log in Console
         }
         else
@@ -67,8 +74,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
     void FaceTarget()
     {
+        //Face the Enemy Model towards the Player
         Vector3 direction = (Target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
