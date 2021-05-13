@@ -1,7 +1,7 @@
 # COMP2007 - The Hunt For The Spittoon Gangs Lost Treasure
 
 ## Itch.io Page
-[The Hunt For The Spittoon Gangs Lost Treasure]()
+[The Hunt For The Spittoon Gangs Lost Treasure](https://cwispy.itch.io/the-hunt-for-the-spittoon-gangs-lost-treasure)
 
 ## Introduction
 The Hunt for the Spitton Gangs Lost Treasure puts you in a western town in a desperate attempt to find the gangs lost treasure. Rumour says the treasure is located
