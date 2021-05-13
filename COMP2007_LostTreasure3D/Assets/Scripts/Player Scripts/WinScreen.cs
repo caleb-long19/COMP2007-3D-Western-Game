@@ -7,6 +7,7 @@ public class WinScreen : MonoBehaviour
 {
     public GameObject Win; // Attatch gameObject called DeathMenu in unity
     public GameObject Player; // Player GameObject
+    public AudioSource winSFX;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class WinScreen : MonoBehaviour
             Win.SetActive(true); // When Player collides with Main House and has the treasure, Win Screen is Active
             Player.SetActive(false); // Player is set to Inactive      
             Time.timeScale = 0; // Game is paused
+            winSFX.Play(0);
         }
     }
 

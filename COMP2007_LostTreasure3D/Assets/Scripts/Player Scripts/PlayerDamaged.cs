@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class OnDamagedEvent : UnityEvent<int> { }
 
 public class PlayerDamaged : AnimatorController
 {
@@ -24,14 +28,6 @@ public class PlayerDamaged : AnimatorController
         playerHealth.CurrentPlayerHealth -= damage; // If Shield is less than or equal to 1, Player can lose Health
         HealthbarAnimations();
         SoundEffectHurt();
-    }
-
-
-    #region Damage and Heal Player Methods
-    void DamagePlayer(int damagePlayer)
-    {
-        //Take the current player health and decrease by set int value
-        playerHealth.CurrentPlayerHealth -= damagePlayer;
 
         //if the health is less than 0 - reset to 0
         if (playerHealth.CurrentPlayerHealth <= 0)
@@ -39,7 +35,6 @@ public class PlayerDamaged : AnimatorController
             playerHealth.CurrentPlayerHealth = 0;
         }
     }
-    #endregion
 
     #region Virtual Methods
     public override void SoundEffectHurt()

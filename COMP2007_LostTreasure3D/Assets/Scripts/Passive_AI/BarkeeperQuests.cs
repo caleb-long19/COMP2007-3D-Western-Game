@@ -37,9 +37,9 @@ public class BarkeeperQuests : MonoBehaviour
         #endregion
 
 
-        #region
+        #region set quests objects to false
         GoldenBottle.SetActive(false);
-        ItemClearUp.SetActive(true);
+        ItemClearUp.SetActive(false);
         LostTreasure.SetActive(false);
         #endregion
     }
@@ -72,6 +72,7 @@ public class BarkeeperQuests : MonoBehaviour
         if (checkCoins == true && GoldenBottle.activeInHierarchy == false)
         {
             DialogGoldenBottle.SetActive(false);
+            ItemClearUp.SetActive(true);
             DialogCleanOutside.SetActive(true);
         }
         if (checkCoins == true && GoldenBottle.activeInHierarchy == false && ItemClearUp.activeInHierarchy == false)

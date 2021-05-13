@@ -17,10 +17,9 @@ public class EnemyAI : MonoBehaviour
     private float MaxEnemyRange = 0; // Maximum range the Enemy can spot player
 
     //Unity References
-    public GameObject Blood; // Blood particles for Enemies
     private Animator EnemyMovement; // Reference to Unity Animator
     private Transform Target; // Reference to Player position
-    public AudioClip Hurt;
+    public AudioSource EnemySFX;
 
 
     public void Start()
@@ -54,14 +53,17 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag.Equals("Player")) //If "Player" collides with coin add 1 point and destroy object
+        if (collision.gameObject.tag.Equals("Player")) //If Enemy collides with Player character
         {
+            EnemySFX.Play(0);
+            EnemyMovement.SetBool("enemyIsMoving", false);
             EnemyMovement.SetBool("enemyIsAttacking", true);
             Debug.Log("Player Has Collided!"); // Display Debug Log in Console
         }
         else
         {
             EnemyMovement.SetBool("enemyIsAttacking", false);
+            EnemyMovement.SetBool("enemyIsMoving", true);
         }
     }
 

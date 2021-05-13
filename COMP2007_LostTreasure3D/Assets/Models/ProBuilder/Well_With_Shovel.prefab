@@ -883,6 +883,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6305761299976531766, guid: b2b9d2f5e5cd2c04ba102fa4929231ef, type: 3}
+      propertyPath: DopplerLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305761299976531766, guid: b2b9d2f5e5cd2c04ba102fa4929231ef, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b9d2f5e5cd2c04ba102fa4929231ef, type: 3}
 --- !u!4 &4017766089356485773 stripped
