@@ -32,3 +32,5 @@ in this forgotten town. The only remaining building is a Saloon with an elderly 
 ## Resources Used For Project - Audio Only
 - [Ross Bugden - The Wild West](https://www.youtube.com/watch?v=VDPMAuv-3nkm)
 - [Brandon Flechter - Tumbleweed Town](https://www.youtube.com/watch?v=JBkRe_m21Z0)
+
+## All Assets both SFX and Textures are custom*
