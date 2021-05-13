@@ -15,6 +15,20 @@ in this forgotten town. The only remaining building is a Saloon with an elderly 
 - Enemy AI that will hunt you while you explore
 - Avoid Enemies while completing your Quests
 
+## Controls
+### Movement
+     W - Move Forward
+     A - Move Left
+     S - Move Backwards
+     D - Move Right
+
+### Interaction
+    Press "E" to collect objects and talk to NPCs
+
+### Tips
+    Avoid Enemies - They are Invincible and will cause harm
+    Visit the Saloon!
+
 ## Resources Used For Project - Audio Only
 - [Ross Bugden - The Wild West](https://www.youtube.com/watch?v=VDPMAuv-3nkm)
 - [Brandon Flechter - Tumbleweed Town](https://www.youtube.com/watch?v=JBkRe_m21Z0)
