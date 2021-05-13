@@ -1790,7 +1790,6 @@ GameObject:
   - component: {fileID: 1191442090}
   - component: {fileID: 1191442089}
   - component: {fileID: 1191442094}
-  - component: {fileID: 1191442093}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -1954,18 +1953,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191442087}
   m_CullTransparentMesh: 1
---- !u!114 &1191442093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191442087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ec92ee70a8d9c4aa6b83d79e746ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1191442094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2538,9 +2525,8 @@ GameObject:
   - component: {fileID: 1649778694}
   - component: {fileID: 1649778693}
   - component: {fileID: 1649778692}
-  - component: {fileID: 1649778695}
-  - component: {fileID: 1649778696}
   - component: {fileID: 1649778697}
+  - component: {fileID: 1649778695}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2695,7 +2681,7 @@ Animator:
   m_GameObject: {fileID: 1649778690}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de92512df40fab944a366ba451a498d1, type: 2}
+  m_Controller: {fileID: 9100000, guid: b2b4fe5ffd6739148a39d3512d0063e6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2704,18 +2690,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1649778696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649778690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ec92ee70a8d9c4aa6b83d79e746ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1649778697
 BoxCollider2D:
   m_ObjectHideFlags: 0

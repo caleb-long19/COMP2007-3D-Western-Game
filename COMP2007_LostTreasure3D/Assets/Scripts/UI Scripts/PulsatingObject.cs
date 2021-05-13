@@ -21,10 +21,6 @@ public class PulsatingObject : MonoBehaviour, AnimationInterface
         {
             UiAnimation();
         }
-        else
-        {
-            StopCoroutine("UiAnimationProcess");
-        }
     }
 
     #region Animation Method and IEnumerator to create Rumble effect for Healthbar
